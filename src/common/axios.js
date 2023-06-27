@@ -1,9 +1,9 @@
 import axios from "axios";
 
-function setupAxios({apiKey}) {
-  if (process.env.NODE_ENV === "development") {
-    axios.defaults.baseURL = "http://localhost:6333";
-  }
+function setupAxios({ apiKey }) {
+  
+  axios.defaults.baseURL = import.meta.env.VITE_QDRANT_URL;
+
   if (apiKey) {
     axios.defaults.headers.common["api-key"] = apiKey;
   }
