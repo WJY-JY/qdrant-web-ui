@@ -36,7 +36,8 @@
     "build": "vite build --base './'",
     "build-qdrant": "vite build --base '/dashboard/'",
     "serve": "vite preview",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "build-docker": "npm run build && docker build . -t 192.168.3.201:8082/bjknrt/qdrant-ui:${IMAGE_TAG}"
   },
   "eslintConfig": {
     "extends": [
